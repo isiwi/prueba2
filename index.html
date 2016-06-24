@@ -10,7 +10,7 @@
 <link href="bootstrap.min.css" rel="stylesheet">
 <!-- jQuery library -->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
-<link href="jquery.min.js" rel="stylesheet">
+<script type="text/javascript" src="jquery.min.js"></script>
 
 <!-- Latest compiled JavaScript -->
 <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
@@ -43,7 +43,7 @@
 				   <img src="portada.png" class="img-responsive">		  
 				 </div>
 				 <div>
-				  <br><button id="enviar_crear" onclick="enviar_crear();" type="button" class="btn btn-danger btn-xs" >Comenzar</button>
+				  <br><button id="enviar_crear" type="button" class="btn btn-danger btn-xs" >Comenzar</button>
 				 </div>
 		 </div>
        </div>
@@ -80,16 +80,25 @@
 	 </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+    <script type="text/javascript"></script>
+
+
 <script type="text/javascript">
-document.getElementById('crear').style.visibility = "hidden";
+/*document.getElementById('crear').style.visibility = "hidden";
 function enviar_crear(){
 document.getElementById('principal').style.visibility = "hidden";
 document.getElementById('crear').style.visibility = "visible";
+*/
+$(function () {
+ $("#crear").hide();
+$("#enviar_crear").on("click", function(e){
+         $("#principal").hide(); 
+		 $("#crear").show();
 
-}
+
+	});
+
+});
 </script>
 
 </html>
